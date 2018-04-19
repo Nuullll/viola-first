@@ -7,6 +7,9 @@
  * @author:     Nuullll
  */
 /**
+ * Import prefixer.less to handle cross-browser prefixes
+ */
+/**
  * Hide elements:
  * 1. detail button of project thumbnails
  * 2. auto-play button of slideshows
