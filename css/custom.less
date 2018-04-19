@@ -62,8 +62,11 @@
 @dark-blue: #0052D4;
 // define linear gradient
 // bottom: dark-blue, top: light-blue
-.linear-gradient-color(@dark-side: bottom, @size: 25px) {
+.linear-gradient-color(@dark-side) {
     background: -webkit-linear-gradient(@dark-side, @dark-blue 0%, @mid-blue 50%, @light-blue 100%);
+}
+.text-gradient-color(@dark-side; @size) {
+    .linear-gradient-color(@dark-side);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: @size @size;
@@ -75,7 +78,7 @@
 .menu-text {
     line-height: @menu-text-line-height;
     .accent-gradient &:hover {
-        .linear-gradient-color(@size: @menu-text-line-height);
+        .text-gradient-color(bottom; @menu-text-line-height);
         border-bottom-color: fade(@dark-blue, 80);  // alpha: 80%
     }
 }
@@ -86,7 +89,21 @@
 h3.entry-title {
     line-height: @project-title-line-height;
     .accent-gradient #page .project-list-content & a:hover {
-        .linear-gradient-color(@size: @project-title-line-height);
+        .text-gradient-color(bottom; @project-title-line-height);
+    }
+}
+/**
+ * Other work next-prev button gradient background
+ */
+.accent-gradient .arrows-bg-on.owl-carousel .owl-nav a {
+    .owl-prev {
+        background: @mid-blue;
+        .linear-gradient-color(135deg);
+    }
+
+    .owl-next {
+        background: @mid-blue;
+        .linear-gradient-color(-135deg);
     }
 }
 
