@@ -47,13 +47,28 @@
  * Gradient hover color:
  * Telegram UI gradient color
  */
+/**
+ * Menu text gradient color
+ */
 .menu-text {
-  font-size: 25px;
+  line-height: 29px;
 }
-.menu-text:hover {
+.accent-gradient .menu-text:hover {
   background: -webkit-linear-gradient(bottom, #0052D4 0%, #65C7F7 50%, #9CECFB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 25px 25px;
+  background-size: 29px 29px;
   border-bottom-color: rgba(0, 82, 212, 0.8);
+}
+/**
+ * Project title link gradient color
+ */
+h3.entry-title {
+  line-height: 32px;
+}
+.accent-gradient #page .project-list-content h3.entry-title a:hover {
+  background: -webkit-linear-gradient(bottom, #0052D4 0%, #65C7F7 50%, #9CECFB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 32px 32px;
 }

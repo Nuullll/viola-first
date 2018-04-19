@@ -67,14 +67,24 @@
     -webkit-text-fill-color: transparent;
     background-size: @size @size;
 }
-// define menu text font size
-@menu-text-size: 25px;
-
-// main menu text hover
+/**
+ * Menu text gradient color
+ */
+@menu-text-line-height: 29px;
 .menu-text {
-    font-size: @menu-text-size;
-    &:hover {
-        .linear-gradient-color(@dark-side: bottom, @size: @menu-text-size);
+    line-height: @menu-text-line-height;
+    .accent-gradient &:hover {
+        .linear-gradient-color(@size: @menu-text-line-height);
         border-bottom-color: fade(@dark-blue, 80);  // alpha: 80%
+    }
+}
+/**
+ * Project title link gradient color
+ */
+@project-title-line-height: 32px;
+h3.entry-title {
+    line-height: @project-title-line-height;
+    .accent-gradient #page .project-list-content & a:hover {
+        .linear-gradient-color(@size: @project-title-line-height);
     }
 }
