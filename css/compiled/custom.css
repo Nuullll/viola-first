@@ -1,0 +1,27 @@
+/**
+ * Pre-compiled custom.css from LESS
+ * Global custom css of wordpress
+ *
+ * @date:       2018/04/19
+ * @version:    1.0.0
+ * @author:     Nuullll
+ */
+/**
+ * Hide elements:
+ * 1. zoom button of project thumbnails
+ * 2. detail button of project thumbnails
+ * 3. auto-play button of slideshows
+ * 4. project-info-box on each profolio page
+ * 5. footer
+ * 6. hide-thumbnail button of slideshows
+ *
+ * @since:  1.0.0
+ */
+.project-zoom,
+.project-details,
+.auto-play-btn,
+.project-info-box,
+#footer,
+.hide-thumb-btn {
+  display: none !important;
+}
