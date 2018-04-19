@@ -287,3 +287,121 @@ a .post-navigation .nav-links .fa:hover {
 .full-screen-btn.act:before {
   content: '\f066';
 }
+/**
+ * Scroller arrow of slideshows
+ */
+.scroller-arrow {
+  z-index: 518;
+}
+/**
+ * Music player layout
+ */
+@-webkit-keyframes play-icon-bob {
+  20% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  80% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+@keyframes play-icon-bob {
+  20% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  80% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+.music-player {
+  position: fixed;
+  right: 60px;
+  bottom: 10px;
+  z-index: 518;
+}
+.music-player .play-button {
+  width: 44px;
+  height: 44px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  font-family: 'Defaults';
+  color: white;
+  font-size: 23px;
+  line-height: 44px;
+  text-align: center;
+}
+.music-player .play-button:before {
+  content: '\f001';
+}
+.music-player .play-button:hover {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+}
+.playing .play-button:before {
+  display: inline-block;
+  -webkit-animation-name: play-icon-bob;
+  -webkit-animation-duration: 2.4s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: play-icon-bob;
+  animation-duration: 2.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.text-window {
+  position: absolute;
+  height: 44px;
+  right: 44px;
+  top: 0;
+  width: 180px;
+  overflow: hidden;
+}
+.text-board {
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3px 5px 3px 20px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 2px 0 0 2px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all .4s ease .1s;
+  transition: all .4s ease .1s;
+}
+.text-board .song-name,
+.text-board .singer-name {
+  display: block;
+  text-align: center;
+  color: white;
+  line-height: 19px;
+}
+.text-board .song-name {
+  font-size: 16px;
+}
+.text-board .song-name:before {
+  content: 'City of Stars';
+}
+.text-board .singer-name {
+  font-size: 14px;
+}
+.text-board .singer-name:before {
+  content: 'Viola';
+}
+.music-player:hover .text-board {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}

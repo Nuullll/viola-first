@@ -355,3 +355,134 @@ h3.entry-title {
         content: '\f066';
     }
 }
+
+/**
+ * Scroller arrow of slideshows
+ */
+.scroller-arrow {
+    z-index: @top-z-index + 1;
+}
+
+/**
+ * Music player layout
+ */
+ @-webkit-keyframes play-icon-bob {
+    20% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+    }
+    80% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+ }
+ @keyframes play-icon-bob {
+    20% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+    }
+    80% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+ }
+@music-player-size: 44px;
+@window-margin: 10px;
+@icon-gap: 6px;
+@music-icon-size: 23px;
+@music-border-radius: 2px;
+.music-player {
+    position: fixed;
+    right: @music-player-size + @window-margin + @icon-gap;
+    bottom: @window-margin;
+    z-index: @top-z-index + 1;
+
+    .play-button {
+        .square(@music-player-size);
+        background-color: #000;
+        background-color: fade(#000,20);
+        border-radius: @music-border-radius;
+        font-family: 'Defaults';
+        color: white;
+        font-size: @music-icon-size;
+        line-height: @music-player-size;
+        text-align: center;
+
+        &:before {
+            content: '\f001';
+        }
+
+        &:hover {
+            background-color: #000;
+            background-color: fade(#000,50);
+            cursor: pointer;
+            border-radius: 0 @music-border-radius @music-border-radius 0;
+        }
+    }
+}
+.playing .play-button:before {
+    display: inline-block;
+    -webkit-animation-name: play-icon-bob;
+    -webkit-animation-duration: 2.4s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    animation-name: play-icon-bob;
+    animation-duration: 2.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.text-window {
+    position: absolute;
+    height: @music-player-size;
+    right: @music-player-size;
+    top: 0;
+    width: 180px;
+    overflow: hidden;
+}
+.text-board {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3px 5px 3px 20px;
+    background-color: #000;
+    background-color: fade(#000,50);
+    border-radius: @music-border-radius 0 0 @music-border-radius;
+    .transform(translateX(100%));
+    -webkit-transition: all .4s ease .1s;
+    transition: all .4s ease .1s;
+
+    .song-name, .singer-name {
+        display: block;
+        text-align: center;
+        color: white;
+        line-height: 19px;
+    }
+
+    .song-name {
+        font-size: 16px;
+
+        &:before {
+            content: 'City of Stars';
+        }
+    }
+
+    .singer-name {
+        font-size: 14px;
+
+        &:before {
+            content: 'Viola';
+        }
+    }
+
+    .music-player:hover & {
+        .transform(translateX(0));
+    }
+}
