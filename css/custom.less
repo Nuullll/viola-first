@@ -10,11 +10,6 @@
  */
 
 /**
- * Import prefixer.less to handle cross-browser prefixes
- */
-@import './prefixer.less';
-
-/**
  * Hide elements:
  * 1. detail button of project thumbnails
  * 2. auto-play button of slideshows
@@ -22,9 +17,11 @@
  * 4. project-info-box on each profolio page
  * 5. footer
  */
-@hide: { display: none !important; };
+.hide() {
+    display: none !important;
+}
 .project-details, .auto-play-btn, .hide-thumb-btn, .project-info-box, #footer {
-    @hide();
+    .hide();
 }
 
 /**
@@ -39,12 +36,12 @@
  * 1. category links
  * 2. author vcard link
  */
-@unclickable: {
+.unclickable() {
     pointer-events: none;
     cursor: default;
-};
+}
 .category-link, .author.vcard {
-    @unclickable();
+    .unclickable();
 }
 
 /**
@@ -52,4 +49,32 @@
  */
 .menu-text {
     border-bottom: solid 1.5px;
+}
+
+/**
+ * Gradient hover color:
+ * Telegram UI gradient color
+ */
+// define blues
+@light-blue: #9CECFB;
+@mid-blue: #65C7F7;
+@dark-blue: #0052D4;
+// define linear gradient
+// bottom: dark-blue, top: light-blue
+.linear-gradient-color(@dark-side: bottom, @size: 25px) {
+    background: -webkit-linear-gradient(@dark-side, @dark-blue 0%, @mid-blue 50%, @light-blue 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: @size @size;
+}
+// define menu text font size
+@menu-text-size: 25px;
+
+// main menu text hover
+.menu-text {
+    font-size: @menu-text-size;
+    &:hover {
+        .linear-gradient-color(@dark-side: bottom, @size: @menu-text-size);
+        border-bottom-color: fade(@dark-blue, 80);  // alpha: 80%
+    }
 }

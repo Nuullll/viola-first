@@ -7,9 +7,6 @@
  * @author:     Nuullll
  */
 /**
- * Import prefixer.less to handle cross-browser prefixes
- */
-/**
  * Hide elements:
  * 1. detail button of project thumbnails
  * 2. auto-play button of slideshows
@@ -45,4 +42,18 @@
  */
 .menu-text {
   border-bottom: solid 1.5px;
+}
+/**
+ * Gradient hover color:
+ * Telegram UI gradient color
+ */
+.menu-text {
+  font-size: 25px;
+}
+.menu-text:hover {
+  background: -webkit-linear-gradient(bottom, #0052D4 0%, #65C7F7 50%, #9CECFB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 25px 25px;
+  border-bottom-color: rgba(0, 82, 212, 0.8);
 }
