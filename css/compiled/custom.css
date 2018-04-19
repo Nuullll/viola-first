@@ -8,20 +8,38 @@
  */
 /**
  * Hide elements:
- * 1. zoom button of project thumbnails
- * 2. detail button of project thumbnails
- * 3. auto-play button of slideshows
+ * 1. detail button of project thumbnails
+ * 2. auto-play button of slideshows
+ * 3. hide-thumbnail button of slideshows
  * 4. project-info-box on each profolio page
  * 5. footer
- * 6. hide-thumbnail button of slideshows
- *
- * @since:  1.0.0
  */
-.project-zoom,
 .project-details,
 .auto-play-btn,
+.hide-thumb-btn,
 .project-info-box,
-#footer,
-.hide-thumb-btn {
+#footer {
   display: none !important;
+}
+/**
+ * Reduce #main padding-top from 70px to 20px on profolio pages
+ */
+#main.sidebar-none {
+  padding-top: 20px;
+}
+/**
+ * Disable unwanted links
+ * 1. category links
+ * 2. author vcard link
+ */
+.category-link,
+.author.vcard {
+  pointer-events: none;
+  cursor: default;
+}
+/**
+ * HOME main menu style
+ */
+.menu-text {
+  border-bottom: solid 1.5px;
 }
