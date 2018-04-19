@@ -13,12 +13,14 @@
  * 3. hide-thumbnail button of slideshows
  * 4. project-info-box on each profolio page
  * 5. footer
+ * 6. caption of photoswipers
  */
 .project-details,
 .auto-play-btn,
 .hide-thumb-btn,
 .project-info-box,
-#footer {
+#footer,
+.pswp__caption {
   display: none !important;
 }
 /**
@@ -71,4 +73,71 @@ h3.entry-title {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 32px 32px;
+}
+/**
+ * Next-previous navigation layout
+ */
+.post-navigation i.fa {
+  font-family: icomoon-arrows-carousel-32x32 !important;
+  font-size: 18px;
+  line-height: 36px;
+  width: 36px;
+  height: 36px;
+  background: rgba(51, 51, 51, 0.06);
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 500px;
+  text-align: center;
+}
+.post-navigation .nav-links {
+  justify-content: space-between;
+}
+.post-navigation .nav-links .nav-next,
+.post-navigation .nav-links .nav-previous {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.post-navigation .nav-links .nav-next-container,
+.post-navigation .nav-links .nav-previous-container {
+  width: 20%;
+  padding: 0;
+  margin: auto 30px;
+  text-align: center;
+}
+.mobile-true .post-navigation .nav-links .nav-next-container,
+.mobile-true .post-navigation .nav-links .nav-previous-container {
+  width: 100%;
+  margin: 0;
+}
+.post-navigation .nav-links .nav-next-thumbnail,
+.post-navigation .nav-links .nav-previous-thumbnail {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border-radius: 5px;
+}
+.post-navigation .nav-links .nav-next i {
+  right: -36px;
+}
+.post-navigation .nav-links .nav-next-thumbnail {
+  margin-right: 0px;
+}
+.post-navigation .nav-links .nav-previous i {
+  left: -36px;
+}
+.post-navigation .nav-links .nav-previous-thumbnail {
+  margin-left: 0px;
+}
+.post-navigation .nav-links .fa-angle-left {
+  margin-left: -5px;
+}
+.post-navigation .nav-links .fa-angle-left:before {
+  content: '\e928';
+}
+.post-navigation .nav-links .fa-angle-right {
+  margin-right: -5px;
+}
+.post-navigation .nav-links .fa-angle-right:before {
+  content: '\e929';
 }

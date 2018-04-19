@@ -16,11 +16,12 @@
  * 3. hide-thumbnail button of slideshows
  * 4. project-info-box on each profolio page
  * 5. footer
+ * 6. caption of photoswipers
  */
 .hide() {
     display: none !important;
 }
-.project-details, .auto-play-btn, .hide-thumb-btn, .project-info-box, #footer {
+.project-details, .auto-play-btn, .hide-thumb-btn, .project-info-box, #footer, .pswp__caption {
     .hide();
 }
 
@@ -86,5 +87,96 @@ h3.entry-title {
     line-height: @project-title-line-height;
     .accent-gradient #page .project-list-content & a:hover {
         .linear-gradient-color(@size: @project-title-line-height);
+    }
+}
+
+/**
+ * Next-previous navigation layout
+ */
+.square(@size) {
+    width: @size;
+    height: @size;
+}
+@icon-font-size: 18px;
+@icon-box-size: 2 * @icon-font-size;
+@thumb-border-radius: 5px;
+@icon-inner-margin-offset: 5px;
+.post-navigation {
+    i.fa {
+        font-family: icomoon-arrows-carousel-32x32 !important;
+        font-size: @icon-font-size;
+        line-height: @icon-box-size;
+        .square(@icon-box-size);
+        background: rgba(51,51,51,0.06);
+        border-width: 0px;
+        border-style: solid;
+        border-radius: 500px;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: space-between;
+        .nav-next, .nav-previous {
+            &-container {
+                width: 20%;
+                padding: 0;
+                margin: auto 30px;
+                text-align: center;
+
+                .mobile-true & {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            &-thumbnail {
+                width: 100%;
+                height: auto;
+                margin: auto;
+                border-radius: @thumb-border-radius;
+            }
+        }
+
+        .nav-next {
+            i {
+                right: -@icon-box-size;
+            }
+
+            &-thumbnail {
+                margin-right: 0px;
+            }
+        }
+
+        .nav-previous {
+            i {
+                left: -@icon-box-size;
+            }
+
+            &-thumbnail {
+                margin-left: 0px;
+            }
+        }
+
+        .fa-angle {
+            &-left {
+                margin-left: -@icon-inner-margin-offset;
+
+                &:before {
+                    content: '\e928';
+                }
+            }
+
+            &-right {
+                margin-right: -@icon-inner-margin-offset;
+
+                &:before {
+                    content: '\e929';
+                }
+            }
+        }
     }
 }
