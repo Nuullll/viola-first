@@ -197,3 +197,37 @@ h3.entry-title {
         }
     }
 }
+
+/**
+ * Full screen button style
+ */
+@full-screen-button-font-size: 22px;
+@full-screen-button-line-height: 36px;
+.full-screen-btn {
+    &, &.act {
+        background: none;
+        text-decoration: none;
+        text-align: center;
+        color: #ffffff;
+        opacity: 0.5;
+
+        &:before {
+            font-family: FontAwesome;
+            font-size: @full-screen-button-font-size;
+            line-height: @full-screen-button-line-height;
+        }
+
+        &:hover {
+            color: #ffffff;
+            opacity: 1;
+        }
+    }
+
+    &:before {
+        content: '\f065';
+    }
+
+    &.act:before {
+        content: '\f066';
+    }
+}

@@ -152,3 +152,31 @@ h3.entry-title {
 .post-navigation .nav-links .fa-angle-right:before {
   content: '\e929';
 }
+/**
+ * Full screen button style
+ */
+.full-screen-btn,
+.full-screen-btn.act {
+  background: none;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.full-screen-btn:before,
+.full-screen-btn.act:before {
+  font-family: FontAwesome;
+  font-size: 22px;
+  line-height: 36px;
+}
+.full-screen-btn:hover,
+.full-screen-btn.act:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+.full-screen-btn:before {
+  content: '\f065';
+}
+.full-screen-btn.act:before {
+  content: '\f066';
+}
