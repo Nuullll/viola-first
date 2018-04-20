@@ -77,11 +77,11 @@ h3.entry-title {
 /**
  * Other work next-prev button gradient background
  */
-.accent-gradient .arrows-bg-on.owl-carousel .owl-nav a .owl-prev {
+.accent-gradient .arrows-bg-on.owl-carousel .owl-nav a.owl-prev {
   background: #65C7F7;
   background: -webkit-linear-gradient(135deg, #0052D4 0%, #65C7F7 50%, #9CECFB 100%);
 }
-.accent-gradient .arrows-bg-on.owl-carousel .owl-nav a .owl-next {
+.accent-gradient .arrows-bg-on.owl-carousel .owl-nav a.owl-next {
   background: #65C7F7;
   background: -webkit-linear-gradient(-135deg, #0052D4 0%, #65C7F7 50%, #9CECFB 100%);
 }
