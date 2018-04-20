@@ -26,31 +26,18 @@ add_action( 'wp_enqueue_scripts', 'enqueue_hover_css' );
  * enqueue custom font stylesheets
  */
 function enqueue_font_css() {
-    $font_dir = get_stylesheet_directory_uri() . '/fonts/';
+    $enqueue_font = function($font_name) {
+		$font_dir = get_stylesheet_directory_uri() . '/fonts/';
+        wp_enqueue_style( "font-{$font_name}",
+            "{$font_dir}{$font_name}/stylesheet.css",
+            $ver = wp_get_theme()->get('Version')
+        );
+    };
 
-    wp_enqueue_style( 'font-brusher',
-        $font_dir . 'Brusher/stylesheet.css',
-        $ver = wp_get_theme()->get('Version')
-    );
-
-    wp_enqueue_style( 'font-levibrush',
-        $font_dir . 'levibrush/stylesheet.css',
-        $ver = wp_get_theme()->get('Version')
-    );
-
-    wp_enqueue_style( 'font-wc-mano-negra-bta',
-        $font_dir . 'wc-mano-negra-bta/stylesheet.css',
-        $ver = wp_get_theme()->get('Version')
-    );
-
-    wp_enqueue_style( 'font-day-billabong',
-        $font_dir . 'day-billabong/stylesheet.css',
-        $ver = wp_get_theme()->get('Version')
-    );
-
-    wp_enqueue_style( 'font-lucky-turns',
-        $font_dir . 'lucky-turns/stylesheet.css',
-        $ver = wp_get_theme()->get('Version')
-    );
+    $enqueue_font('Brusher');
+    $enqueue_font('levibrush');
+    $enqueue_font('wc-mano-negra-bta');
+    $enqueue_font('day-billabong');
+    $enqueue_font('lucky-turns');
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_font_css' );
