@@ -26,3 +26,7 @@ Enqueue stylesheets in [functions.php](php/functions.php).
 * OR sync [functions.php](php/functions.php) to the remote server (viola-wang.com:/var/www/html/wp-content/themes/dt-the7-child/functions.php) directly.
   * You can use `rsync` to sync the file.
   * Pay attention to the ownership and mod of the synced file.
+
+## JavaScript
+
+Insert js codes directly into the html.
