@@ -39,5 +39,32 @@ function enqueue_font_css() {
     $enqueue_font('wc-mano-negra-bta');
     $enqueue_font('day-billabong');
     $enqueue_font('lucky-turns');
+
+    // fix FontAwesome import bug caused by The7 update
+    wp_enqueue_style( "font-FontAwesome",
+        get_stylesheet_directory_uri() . "/fonts/FontAwesome/css/fontawesome.min.css",
+        $ver = wp_get_theme()->get('Version')
+    );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_font_css' );
+
+/**
+ * add shortcode for portfolio list (on home page)
+ */
+function get_portfolio_list( $atts ) {
+    $a = shortcode_atts(
+        array(
+            // default attributes
+        ),
+        $atts
+    );
+
+    $posts = get_posts(
+        array(
+            'posts_per_page' => -1
+        )
+    );
+
+    return '';
+}
+add_shortcode( 'portfoliolist', 'get_portfolio_list' );
