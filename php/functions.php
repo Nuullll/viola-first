@@ -42,7 +42,7 @@ function enqueue_font_css() {
 
     // fix FontAwesome import bug caused by The7 update
     wp_enqueue_style( "font-FontAwesome",
-        get_stylesheet_directory_uri() . "/fonts/FontAwesome/css/fontawesome.min.css",
+        get_stylesheet_directory_uri() . "/fonts/FontAwesome/css/font-awesome.min.css",
         $ver = wp_get_theme()->get('Version')
     );
 }
@@ -59,9 +59,10 @@ function get_portfolio_list( $atts ) {
         $atts
     );
 
-    $posts = get_posts(
+    $portfolios = get_posts(
         array(
-            'posts_per_page' => -1
+            'posts_per_page' => -1,
+            'post_type' => 'dt_portfolio'
         )
     );
 
