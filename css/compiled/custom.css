@@ -252,7 +252,7 @@ a .post-navigation .nav-links .fa:hover {
   background: -webkit-linear-gradient(-135deg, rgba(0, 82, 212, 0.85) 0%, rgba(101, 199, 247, 0.85) 50%, rgba(156, 236, 251, 0.85) 100%);
 }
 .hover-navigation:hover .fa {
-  color: white;
+  color: white !important;
 }
 .hover-navigation:hover .fa:after {
   opacity: 1;
