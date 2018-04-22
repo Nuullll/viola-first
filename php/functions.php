@@ -14,6 +14,7 @@
 /**
  * enqueue hover-min.css to support several hover effects
  */
+add_action('wp_enqueue_scripts', 'enqueue_hover_css');
 function enqueue_hover_css() {
     wp_enqueue_style(
         'hover-min',
@@ -21,11 +22,11 @@ function enqueue_hover_css() {
         $ver = wp_get_theme()->get('Version')
     );
 }
-add_action('wp_enqueue_scripts', 'enqueue_hover_css');
 
 /**
  * enqueue custom font stylesheets
  */
+add_action('wp_enqueue_scripts', 'enqueue_font_css');
 function enqueue_font_css() {
     $enqueue_font = function($font_name) {
 		$font_dir = get_stylesheet_directory_uri() . '/fonts/';
@@ -48,17 +49,19 @@ function enqueue_font_css() {
         $ver = wp_get_theme()->get('Version')
     );
 }
-add_action('wp_enqueue_scripts', 'enqueue_font_css');
 
 /**
  * add shortcode for portfolio list (on home page)
+ *
+ * @example [all_portfolio_list image_width_ratio=65][/all_portfolio_list]
  */
+add_shortcode('all_portfolio_list', 'get_portfolio_list');
 function get_portfolio_list($atts) {
     // handle shortcode attributes
     $a = shortcode_atts(
         array(
             // default attributes
-            'image_width_ratio' => 65
+            'image_width_ratio' => 65       // unit: percent
         ),
         $atts
     );
@@ -70,7 +73,6 @@ function get_portfolio_list($atts) {
 
     return ob_get_clean();
 }
-add_shortcode('all_portfolio_list', 'get_portfolio_list');
 
 // Utility functions
 /**
