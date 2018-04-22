@@ -1,7 +1,7 @@
 <script type="text/javascript">
 /* load audio file */
 var music = document.createElement('audio');
-music.src = '/wp-content/uploads/media/city_of_stars.mp3';
+music.src = 'wp-content/uploads/2018/04/city_of_stars.mp3';
 music.preload = true;
 music.autoplay = false;
 music.loop = true;
