@@ -1,14 +1,13 @@
 <script type="text/javascript">
 function initializeCustomPhotoSwipe(anchorEl) {
-    event.preventDefault();
     var pswpElement = document.querySelectorAll('.pswp')[0];
         src = anchorEl.href;
         w = anchorEl.getAttribute("data-large_image_width");
         h = anchorEl.getAttribute("data-large_image_height");
         item = {
             src: src,
-            w: 0.8*w,
-            h: 0.8*h
+            w: w,
+            h: h
         };
         options = {
             bgOpacity: 0.85,
@@ -34,12 +33,26 @@ function initializeCustomPhotoSwipe(anchorEl) {
     pswp.init();
 }
 
-jQuery(document).ready(function(){
-    jQuery(".custom-pswp").each(function(){
+jQuery(window).load(function(){
+    var desired_w = 864;
+    jQuery(".dt-pswp-item").not("#analytical-chart").each(function(){
+        // modify anchor src
+        src = this.getElementsByTagName('img')[0].src;
+        this.href = src;
+        w = this.getAttribute("data-large_image_width");
+        h = this.getAttribute("data-large_image_height");
+        desired_h = h * desired_w / w;
+        this.setAttribute("data-large_image_width", desired_w);
+        this.setAttribute("data-large_image_height", desired_h);
+    });
+
+    jQuery(".dt-pswp-item").each(function(){
     	jQuery(this).off("click")
             .click(function(e){
                 e.preventDefault();
+
                 initializeCustomPhotoSwipe(this);
+
                 e.stopImmediatePropagation();
             });
         });
