@@ -2,31 +2,39 @@
 
 Welcome to [viola-wang.com](http://viola-wang.com)!
 
-## Custom css
+# wordpress后端管理不完全指南 —— for viola
 
-Use LESS css for fast and sustainable development. 
+## 登录管理界面
 
-[Guide of LESS css](http://lesscss.org/#)
+* 网址： http://viola-wang.com/wp-admin 
+* 用户名： `Viola`
+* 密码：`******`
 
-### Update
+## 网站页面结构
 
-1. Develop on [custom.less](css/custom.less).
-2. Pre-compile (to speed up the website) LESS css to [custom.css](css/compiled/custom.css).
-3. Copy and paste the content of [custom.css](css/compiled/custom.css) to **Appearance->Edit css->Additional css** page of wordpress admin backend.
+* Home (page)
+  ----------------
+  * Circle of Life (portfolio)
+  * iAir (portfolio)
+  * Co-Parking (portfolio)
+  * Wonder Planet (portfolio)
+  * Wear Elsewhere (portfolio)
+  * Protection for the Mini Breakers (portfolio)
+  ----------------
+  * Pen-and-ink Drawings (single image)
+  * Chinese Ink Paintings (single image)
+  * Photo of Gongbi Style (single image)
+  * Red&White Rose (single image)
+  * Analytical Chart (single image)
 
-## functions.php (Child theme)
+## 基本操作
 
-Enqueue stylesheets in [functions.php](php/functions.php).
+### 更新portfolio
 
-*Do NOT use `import *.css` in `style.css`, which will slow down the website.*
+点击左侧导航栏的**Portfolio**即可查看已有portfolio
 
-### Update
+#### 更新图片
 
-* Copy and paste the content of [functions.php](php/functions.php) to **Appearance->Editor->functions.php** page of wordpress admin backend.
-* OR sync [functions.php](php/functions.php) to the remote server (viola-wang.com:/var/www/html/wp-content/themes/dt-the7-child/functions.php) directly.
-  * You can use `rsync` to sync the file.
-  * Pay attention to the ownership and mod of the synced file.
+不同portfolio展示图片的方式不同，进入具体某个portfolio编辑页面即可看到portfolio展示页面的设置及具体构成。
 
-## JavaScript
-
-Insert js codes directly into the html.
+* 页面
