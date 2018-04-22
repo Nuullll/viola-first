@@ -37,4 +37,9 @@ Welcome to [viola-wang.com](http://viola-wang.com)!
 
 不同portfolio展示图片的方式不同，进入具体某个portfolio编辑页面即可看到portfolio展示页面的设置及具体构成。
 
-* 页面
+* 页面内容编辑器（WPBakery Page Builder）
+  * 三种编辑模式
+    * Classic Mode
+    * Backend Editor (默认，推荐）
+    * Frontend Editor
+  * 通过行列单元自由布局页面，有多种元素可以添加（左上角➕），每种元素都有丰富的设置
